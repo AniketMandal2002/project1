@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect("mongodb://localhost:27017/youtubeRegistration",{
+const DB=process.env.LOCAL_DATABASE;
+
+mongoose.connect(DB,{
 
  useNewUrlParser: true,
+  useCreateIndex: true,
   useUnifiedTopology: true,
 }).then(()=>{
     console.log("Connected to MongoDB");
