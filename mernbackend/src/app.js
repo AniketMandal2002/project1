@@ -6,16 +6,16 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const hbs = require("hbs");
-const dotenv = require('dotenv');
-
+const dotenv = require("dotenv");
 
 require("./db/conn");
+
+dotenv.config({ path: "./config.env" });
 
 app.use(express.urlencoded({ extended: true }));
 
 const static_path = path.join(__dirname, "../public");
 const templete_path = path.join(__dirname, "../templetes/views");
-
 
 const partials_path = path.join(__dirname, "../templets/partials");
 
